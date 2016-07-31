@@ -18,16 +18,87 @@ def tabla():
 
 def datos():
     
-    DNI = str(input('Ingrese su DNI: '))
-    Nombre = input('Nombre: ')
-    Apellido=input("Ingrese sus apellidos:\t")
-    Deporte=input("Ingrese su deporte que prefiere:\t")
-    Edad=input("Ingrese su edad:\t")
-    Sexo=input("Ingrese M si usted es masculino y F si usted es femenino:\t")
-    Profesion=input("Ingrese la profesion que ejerce en la actualidad:\t")
-    Ingresos=input("Ingrese remuneracion mensual:\t")
-    Direccion=input("Ingrese su direccion de su domicilio:\t")
-    Numero=input("Ingrese su numero telefonico:\t")
+    while True:
+        DNI = str(input('\tIngrese su DNI:\t'))
+        if len(DNI) == 8 and not(DNI.isalpha()):
+            print('\tDNI valido')
+            break
+        else:
+            print('\tDNI Incorrecto')
+    while True:
+        Nombre = input('\tIngrese sus Nombres:\t')
+        if Nombre.istitle():
+            Nombre = str(Nombre)
+            print('\tNombre valido')
+            break
+        else:
+            print('\tIncorrecto')
+    while True:
+        Apellido = input('\tIngrese sus Apellidos:\t')
+        if Apellido.istitle():
+            Apellido = str(Nombre)
+            print('\tApellido Valido')
+            break
+        else:
+            print('\tIncorrecto')
+    while True:
+        Deporte = input('\tIngrese el Nombre del Deporte que practica:\t')
+        if Deporte.isalpha():
+            Deporte = str(Deporte)
+            print('\tCorrecto')
+            break
+        else:
+            print('\tIncorrecto')
+    while True:
+        Sexo = input('\tIngrese su sexo: \n\tMasculino (M)\n\tFemenino (F)')
+        if Sexo.isalpha():
+            Sexo = str(Sexo)
+            print('\tCorrecto')
+            break
+        else:
+            print('\tIncorrecto')
+    while True:
+        Profesion = input('\tIngrese la Profesion que Ejerce en la actualidad:\t')
+        if Profesion.istitle():
+            Profesion = str(Profesion)
+            print('\tCorrecto')
+            break
+        else:
+            print('\tIncorrecto')
+    while True:
+        Ingresos = input('\tIngrese su Remuneracion Mensual:\t')
+        if Ingresos.isdigit():
+            Ingresos = float(Ingresos)
+            print('\tCorrecto')
+            break
+        else:
+            print('\tIncorrecto')
+    while True:
+        Direccion = input('\tIngrese la Direccion de su Domicilio:\t')
+        if Direccion.istitle():
+            Direccion = str(Direccion)
+            print('\tCorrecto')
+            break
+        else:
+            print('\tIncorrecto')
+    while True:
+        Numero = input('\tIngrese su numero de Telefono o Celular:\t')
+        if Numero.isdigit():
+            Numero = int(Numero)
+            print('\tNumero Correcto')
+            break
+        else:
+            print('\tIncorrecto')
+    while True:
+    Edad = input('\tIngrese su Edad:\t')
+    if Edad >= '18' and Edad <= '100' and Edad.isdigit():
+        print('\tCorrecto, usted es mayor de edad')
+        break
+    elif Edad > '0' and Edad < '18' and Edad.isdigit():
+        print('\tEres menor de edad, no puedes continuar')
+        break
+    else:
+        print('\tEdad no valida')
 
     conexion=sqlite3.connect("club.sqlite")
     consulta=conexion.cursor()
