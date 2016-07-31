@@ -50,7 +50,7 @@ def datos():
         else:
             print('\tIncorrecto')
     while True:
-        Sexo = input('\tIngrese su sexo: \n\tMasculino (M)\n\tFemenino (F)')
+        Sexo = input('\tIngrese su sexo: \n\tMasculino (M)\n\tFemenino (F):\t')
         if Sexo.isalpha():
             Sexo = str(Sexo)
             print('\tCorrecto')
@@ -90,12 +90,9 @@ def datos():
         else:
             print('\tIncorrecto')
     while True:
-        Edad = input('\tIngrese su Edad:\t')
-        if Edad >= '18' and Edad <= '100' and Edad.isdigit():
+        Edad = int(input('\tIngrese su Edad:\t'))
+        if Edad >= 18 and Edad <= 100:
             print('\tCorrecto, usted es mayor de edad')
-            break
-        elif Edad > '0' and Edad < '18' and Edad.isdigit():
-            print('\tEres menor de edad, no puedes continuar')
             break
         else:
             print('\tEdad no valida')
