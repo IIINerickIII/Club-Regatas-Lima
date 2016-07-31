@@ -14,6 +14,32 @@ def tabla():
     conexion.commit()
     conexion.close()
 
+def datos():
+    
+    DNI = str(input('Ingrese su DNI: '))
+    Nombre = input('Nombre: ')
+    Apellido=input("Ingrese sus apellidos:\t")
+    Deporte=input("Ingrese su deporte que prefiere:\t")
+    Edad=input("Ingrese su edad:\t")
+    Sexo=input("Ingrese M si usted es masculino y F si usted es femenino:\t")
+    Profesion=input("Ingrese la profesion que ejerce en la actualidad:\t")
+    Ingresos=input("Ingrese remuneracion mensual:\t")
+    Direccion=input("Ingrese su direccion de su domicilio:\t")
+    Numero=input("Ingrese su numero telefonico:\t")
+
+    conexion=sqlite3.connect("club.sqlite")
+    consulta=conexion.cursor()
+    argumentos=(DNI,Nombre,Apellido,Deporte,Edad,Sexo,Profesion,Ingresos,datetime.date.today(),Direccion,Numero)
+    variable="INSERT INTO club (DNI,Nombre,Apellido,Deporte,Edad,Sexo,Profesion,Ingresos,Fecha,Direccion,Numero) VALUES (?,?,?,?,?,?,?,?,?,?,?)"
+    if (consulta.execute(variable,argumentos)):
+        print("Registro guardado con exito")
+    else:
+        print("A ocurrido un error al guardar los datos")
+    consulta.close()
+    conexion.commit()
+    conexion.close()
+    
+
 print('''
 \t\t\t\tCLUB DE REGATAS LIMA
 
