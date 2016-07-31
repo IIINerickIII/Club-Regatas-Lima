@@ -52,6 +52,15 @@ def mostrar():
     consulta.close()
     conexion.close()
 
+def limpiar():
+    y = input('\tIngrese el numero de DNI que desee eliminar:\t')
+    conexion=sqlite3.connect("club.sqlite")
+    y='DELETE FROM club WHERE DNI='+str(y)
+    borrar=y
+    conexion.execute(borrar)
+    conexion.commit()
+    conexion.close()
+
 print('''
 \t\t\t\tCLUB DE REGATAS LIMA
 
