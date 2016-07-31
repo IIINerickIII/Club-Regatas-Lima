@@ -90,15 +90,15 @@ def datos():
         else:
             print('\tIncorrecto')
     while True:
-    Edad = input('\tIngrese su Edad:\t')
-    if Edad >= '18' and Edad <= '100' and Edad.isdigit():
-        print('\tCorrecto, usted es mayor de edad')
-        break
-    elif Edad > '0' and Edad < '18' and Edad.isdigit():
-        print('\tEres menor de edad, no puedes continuar')
-        break
-    else:
-        print('\tEdad no valida')
+        Edad = input('\tIngrese su Edad:\t')
+        if Edad >= '18' and Edad <= '100' and Edad.isdigit():
+            print('\tCorrecto, usted es mayor de edad')
+            break
+        elif Edad > '0' and Edad < '18' and Edad.isdigit():
+            print('\tEres menor de edad, no puedes continuar')
+            break
+        else:
+            print('\tEdad no valida')
 
     conexion=sqlite3.connect("club.sqlite")
     consulta=conexion.cursor()
