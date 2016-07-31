@@ -1,4 +1,18 @@
 import os
+import sqlite3
+
+def tabla():
+    
+    conexion=sqlite3.connect("club.sqlite")
+    consulta=conexion.cursor()
+    tabla="CREATE TABLE IF NOT EXISTS club (Nro INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, DNI INTEGER NOT NULL, Nombre TEXT NOT NULL, Apellido TEXT NOT NULL, Deporte TEXT NOT NULL, Edad INTEGER NOT NULL, Sexo TEXT NOT NULL, Profesion TEXT NOT NULL, Ingresos FLOAT NOT NULL, Fecha DATE NOT NULL, Direccion TEXT NOT NULL, Numero INTEGER NOT NULL)"
+    if consulta.execute(tabla):
+        print("\ttabla creada con exito")
+    else:
+        print("\tA ocurrido un error al crear una tabla")
+    consulta.close()
+    conexion.commit()
+    conexion.close()
 
 print('''
 \t\t\t\tCLUB DE REGATAS LIMA
