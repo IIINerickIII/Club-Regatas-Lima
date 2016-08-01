@@ -112,13 +112,9 @@ def datos():
 def mostrar():
     conexion=sqlite3.connect("club.sqlite")
     consulta=conexion.cursor()
-    for ver in consulta.execute("SELECT*FROM club"):
-        if len(str(ver[1]))>7:
-            ver=str(ver[1])+'\t'+str(ver[2])+'\t'+str(ver[3])+'\t'+str(ver[4])+'\t'+str(ver[5])+'\t'+str(ver[6])+'\t'+str(ver[7])+'\t'+str(ver[8])+'\t'+str(ver[9])+'\t'+str(ver[10])+'\t'+str(ver[11])
-        else:
-            ver=str(ver[1])+'\t\t'+str(ver[2])+'\t\t'+str(ver[3])+'\t\t'+str(ver[4])+'\t\t'+str(ver[5])+'\t\t'+str(ver[6])+'\t\t'+str(ver[7])+'\t\t'+str(ver[8])+'\t\t'+str(ver[9])+'\t\t'+str(ver[10])+'\t\t'+str(ver[11])
-
-    print(ver)
+    consulta.execute('SELECT * FROM club')
+    for row in consulta:
+        print(row)
     consulta.close()
     conexion.close()
 
