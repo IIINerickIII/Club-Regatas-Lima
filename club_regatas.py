@@ -165,9 +165,8 @@ else:
     \t1.- Crear tabla de nuevos usuarios
     \t2.- Insertar datos de nuevos asociados
     \t3.- Mostrar Datos de socios
-    \t4.- Modificar Datos de socios
-    \t5.- Eliminar Datos
-    \t6.- Salir
+    \t4.- Eliminar Datos de socios
+    \t5.- Salir
     ''')
         opcion=input('\tElija una Opcion:\t')
         if opcion == '1':
@@ -177,10 +176,8 @@ else:
         elif opcion == '3':
             mostrar()
         elif opcion == '4':
-            print('falta lo del manuelodaskfhasdlkjfhklasdjfhlkasdjfhlfasdkjhlkasdjhfklfsj')
-        elif opcion == '5':
             limpiar()
-        elif opcion == '6':
+        elif opcion == '5':
             break
         opcion = input('\tPresione s para continuar, si no cualquier tecla para salir:\t')
         
