@@ -161,11 +161,11 @@ else:
     opcion = 's'
     while opcion in 'sS':
         print ('''
-    \t\tMENU
-    \t1.- Crear tabla
-    \t2.- Insertar datos
-    \t3.- Mostrar Datos
-    \t4.- Modificar Datos
+    \t\tPROGRAMA DEL CLUB DE REGATAS DE LIMA
+    \t1.- Crear tabla de nuevos usuarios
+    \t2.- Insertar datos de nuevos asociados
+    \t3.- Mostrar Datos de socios
+    \t4.- Modificar Datos de socios
     \t5.- Eliminar Datos
     \t6.- Salir
     ''')
