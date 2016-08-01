@@ -36,7 +36,7 @@ def datos():
     while True:
         Apellido = input('\tIngrese sus Apellidos:\t')
         if Apellido.istitle():
-            Apellido = str(Nombre)
+            Apellido = str(Apellido)
             print('\tApellido Valido')
             break
         else:
